@@ -1,0 +1,14 @@
+<h1>Deletar Atividade</h1>
+
+<p>Tem certeza que deseja deletar esta atividade:
+<br />Descrição: '<?php echo $this->atividade['descricao']; ?>'
+<br />Pontos: '<?php echo $this->atividade['pontos']; ?>'?
+</p>
+
+<form action="<?php echo $this->url(array('controller'=>'admin','action'=>'deleteatividade')); ?>" method="post">
+<div>
+<input type="hidden" name="id" value="<?php echo $this->atividade['id']; ?>" />
+<input type="submit" name="del" value="Sim" />
+<input type="submit" name="del" value="Não" />
+</div>
+</form>

@@ -1,0 +1,14 @@
+<h1>Deletar Professor</h1>
+
+<p>Tem certeza que deseja deletar o professor:
+<br />Nome:<?php echo $this->professor['nome']; ?>
+<br />Matricula: '<?php echo $this->professor['matricula']; ?>?
+</p>
+
+<form action="<?php echo $this->url(array('controller'=>'admin','action'=>'deleteprofessor')); ?>" method="post">
+<div>
+<input type="hidden" name="id" value="<?php echo $this->professor['id']; ?>" />
+<input type="submit" name="del" value="Sim" />
+<a href="<?php echo $this->baseUrl() . '/images/editar.png';?>"><input type="submit" name="del" value="Não" /></a>
+</div>
+</form>

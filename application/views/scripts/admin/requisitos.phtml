@@ -1,0 +1,40 @@
+<h1>Requisitos</h1>
+
+    <table>
+        <tr>
+            <th>Data</th>
+            <th>Requisito</th>
+            <th>Cód. Atividade</th>
+            <th>Requerente</th>
+            <th>Pontos</th>
+            <th>Estado</th>
+            <th>Comprovante</th>
+            <th>Operações</th>
+        </tr>
+        <?php if (isset($this->requisitos)): ?>
+        <?php foreach ($this->requisitos as $requisito): ?>
+                <tr>
+                    <td><?php echo $requisito->data; ?></td>
+                    <td><?php echo $requisito->id; ?></td>
+                    <td><?php echo $requisito->atividade; ?></td>
+                    <td><?php echo $requisito->mat_requerente; ?></td>
+                    <td><?php echo $requisito->pontos; ?></td>
+                    <td><?php echo $requisito->estado; ?></td>
+                    <td><a href="<?php echo $requisito->comprovante;?>" target="_blank">visualizar</a></td>
+                    <?php if ($requisito->estado == 'pendente') :?>
+                    <td><a href="<?php echo $this->url(array('controller'=> 'admin', 'action' => 'aceitar', 'id' => $requisito->id));?>">Aceitar</a>
+                         | <a href="<?php echo $this->url(array('controller'=> 'admin', 'action' => 'recusar', 'id' => $requisito->id));?>">Recusar</a>
+                    </td>
+                    <?php else:?>
+                    <td>&nbsp;</td>
+                    <?php endif; ?>
+
+                </tr>
+        <?php endforeach; ?>
+        <?php else: ?>
+                    <h4>Não há requisitos</h4>
+        <?php endif; ?>
+
+
+
+    </table>

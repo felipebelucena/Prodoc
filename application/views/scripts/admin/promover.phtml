@@ -1,0 +1,17 @@
+<h1>Promover Professor</h1>
+
+<p>Tem certeza que deseja promover o Professor:
+<br />Nome: '<?php echo $this->professor->nome; ?>'
+<br />Matricula '<?php echo $this->professor->matricula;?>
+<br />Pontos: '<?php echo $this->professor->pontos; ?>'?
+<br />Cargo anterior: '<?php echo $this->professor->nome_cargo; ?>
+<br />Data de Início no cargo: '<?php echo $this->professor->data_cargo; ?>?
+</p>
+
+<form action="<?php echo $this->url(array('controller'=>'admin','action'=>'promover')); ?>" method="post">
+<div>
+<input type="hidden" name="id" value="<?php echo $this->atividade['id']; ?>" />
+<input type="submit" name="promover" value="Sim" />
+<input type="submit" name="promover" value="Não" />
+</div>
+</form>

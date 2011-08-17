@@ -1,0 +1,40 @@
+<?php
+$this->headMeta()->appendHttpEquiv('Content-Type', 'text/html;charset=utf-8');
+$this->headTitle()->setSeparator(' - ');
+$this->headTitle('Sistema de Progressão Docente - Unicap');
+echo $this->doctype();
+?>
+<html>
+    <head>
+        <?php echo $this->headMeta(); ?>
+        <?php echo $this->headTitle(); ?>
+        <?php echo $this->headLink()->prependStylesheet($this->baseUrl() . '/css/site.css'); ?>
+
+    </head>
+    <body>
+        <div id="bg">
+            <div id="header">
+                <div id="menu">
+                    <ul>
+                        <li><a href="<?php echo $this->url(array('controller' => 'professor', 'action' => 'index')); ?>" class="first">Início</a></li>
+                        <li><a href="<?php echo $this->url(array('controller' => 'professor', 'action' => 'requisitos')); ?>">Requisitos</a></li>
+                        <li><a href="<?php echo $this->url(array('controller' => 'professor', 'action' => 'atividades')); ?>">Atividades</a></li>
+                        <li>&nbsp;</li>
+                        <li>&nbsp;</li>
+                        <li>&nbsp;</li>
+                        <li>&nbsp;</li>
+                        <li><a href="<?php echo $this->url(array('controller' => 'auth', 'action' => 'logout')); ?>">Professor.:: <?php echo $this->getUserInfo()->nome; ?> -   Sair</a></li>
+                    </ul>
+                    <div id="login"></div>
+
+                </div>
+
+
+
+            </div>
+            <div id="pagina">
+                <?php echo $this->layout()->content; ?>
+            </div>
+        </div>
+    </body>
+</html>

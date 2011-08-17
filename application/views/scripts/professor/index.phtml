@@ -1,0 +1,54 @@
+<?php
+$this->title = 'Página Principal';
+$this->headTitle($this->title);
+?>
+
+<div id="userInfo">
+    <h1>Informações</h1>
+    <table>
+        <tr>
+            <th>Nome</th>
+            <th>Cargo Atual</th>
+            <th>Titulação</th>
+            <th>Pontuação</th>
+        </tr>
+
+        <tr>
+            <td><?php echo $this->escape($this->professor->nome); ?></td>
+            <td><?php echo $this->escape($this->professor->nome_cargo); ?></td>
+            <td><?php echo $this->escape($this->professor->titulo); ?></td>
+            <td><?php echo $this->escape($this->professor->pontos); ?></td>
+        </tr>
+    </table>
+</div>
+<div id="requisito">
+    <h1>Últimos Requisitos:</h1>
+
+    <table>
+        <tr>
+            <th>Data</th>
+            <th>Codigo Requisito</th>
+            <th>Código Atividade</th>
+            <th>Pontos</th>
+            <th>Estado</th>
+            <th>Comprovante</th>
+        </tr>
+        <?php if (isset($this->requisitos)): ?>
+        <?php foreach ($this->requisitos as $requisito): ?>
+                <tr>
+                    <td><?php echo $requisito->data; ?></td>
+                    <td><?php echo $requisito->id; ?></td>
+                    <td><?php echo $requisito->atividade; ?></td>
+                    <td><?php echo $requisito->pontos; ?></td>
+                    <td><?php echo $requisito->estado; ?></td>
+                    <td><a href="<?php echo $requisito->comprovante;?>" target="_blank">visualizar</a></td>
+                </tr>
+        <?php endforeach; ?>
+        <?php else: ?>
+                    <h4>Não há requisitos</h4>
+        <?php endif; ?>
+
+
+
+    </table>
+</div>

@@ -1,0 +1,26 @@
+<h1>Relação das Atividades: </h1><br />
+<div id="atividades">
+<h4><a href="<?php echo $this->url(array('controller'=>'admin','action'=>'addatividade')); ?>">Nova atividade</a></h4>
+<table>
+    <tr>
+        <th>Código</th>
+        <th>Descrição</th>
+        <th>Pontuação</th>
+        <th>Operação</th>
+    </tr>
+    <?php foreach ($this->atividades as $atividade): ?>
+        <tr>
+            <td><?php echo $this->escape($atividade->id); ?></td>
+            <td><?php echo $atividade->descricao; ?></td>
+            <td><?php echo $this->escape($atividade->pontos);?></td>
+            <td><a href="<?php echo $this->url(array('controller'=>'admin', 'action'=>'editatividade', 'id'=>$atividade->id)); ?>">
+                    <img src="<?php echo $this->baseUrl() . '/images/editar.png'; ?>"></a>
+                <a href="<?php echo $this->url(array('controller'=>'admin', 'action'=>'deleteatividade', 'id'=>$atividade->id));?>">
+                    <img src="<?php echo $this->baseUrl() . '/images/excluir.png';?>"></a>
+            </td>
+        </tr>
+
+    <?php endforeach; ?>
+</table>
+
+</div>

@@ -1,0 +1,13 @@
+<h1>Deletar Cargo</h1>
+
+<p>Tem certeza que deseja deletar o cargo:
+'<?php echo $this->cargo['cargo']; ?>'
+</p>
+
+<form action="<?php echo $this->url(array('controller'=>'admin','action'=>'deletecargo')); ?>" method="post">
+<div>
+<input type="hidden" name="id" value="<?php echo $this->cargo['id']; ?>" />
+<input type="submit" name="del" value="Sim" />
+<a href="<?php echo $this->baseUrl() . '/images/editar.png';?>"><input type="submit" name="del" value="Não" /></a>
+</div>
+</form>

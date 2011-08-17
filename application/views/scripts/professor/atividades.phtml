@@ -1,0 +1,17 @@
+<h1>Relação das Atividades: </h1><br />
+
+<table>
+    <tr>
+        <th>Código</th>
+        <th>Descrição</th>
+        <th>Pontuação</th>
+    </tr>
+    <?php foreach ($this->atividades as $atividade): ?>
+        <tr>
+            <td><?php echo $this->escape($atividade->id); ?></td>
+            <td><?php echo $atividade->descricao; ?></td>
+            <td><?php echo $this->escape($atividade->pontos);?></td>
+        </tr>
+
+    <?php endforeach; ?>
+</table>

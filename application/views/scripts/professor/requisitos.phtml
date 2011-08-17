@@ -1,0 +1,37 @@
+<div id ="requisito">
+    <h1>Preencha uma nova requisição.</h1>
+    <br />
+    <h6>(Atenção, clique na seção "Atividades" para saber o código referente à atividade que você deseja enviar)</h6>
+    <?php echo $this->form; ?>
+
+    <br /><br /><br /><br /><br />
+    <h1>Requisitos</h1>
+
+    <table>
+        <tr>
+            <th>Data</th>
+            <th>Codigo Requisito</th>
+            <th>Código Atividade</th>
+            <th>Pontos</th>
+            <th>Estado</th>
+            <th>Comprovante</th>
+        </tr>
+        <?php if (isset($this->requisitos)): ?>
+        <?php foreach ($this->requisitos as $requisito): ?>
+                <tr>
+                    <td><?php echo $requisito->data; ?></td>
+                    <td><?php echo $requisito->id; ?></td>
+                    <td><?php echo $requisito->atividade; ?></td>
+                    <td><?php echo $requisito->pontos; ?></td>
+                    <td><?php echo $requisito->estado; ?></td>
+                    <td><a href="<?php echo $requisito->comprovante;?>" target="_blank">visualizar</a></td>
+                </tr>
+        <?php endforeach; ?>
+        <?php else: ?>
+                    <h4>Não há requisitos</h4>
+        <?php endif; ?>
+
+
+
+    </table>
+</div>

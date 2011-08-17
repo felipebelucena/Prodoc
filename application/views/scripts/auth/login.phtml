@@ -1,0 +1,14 @@
+<div id="login">
+    <?php
+    $errorsMessages = $this->form->getMessages();
+    if (isset ($errorsMessages['matricula']['isEmpty'])) {
+        echo "<span>Campo 'matricula' não pode ser vazio</span>";
+    }
+    if (isset($errorsMessages['senha']['isEmpty'])) {
+        echo "\n<span>Campo 'senha' não pode ser vazio</span>";
+    }
+    
+    echo $this->form;
+    ?>
+
+</div>

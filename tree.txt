@@ -1,0 +1,70 @@
+.
+|-- application
+|   |-- Bootstrap.php
+|   |-- configs
+|   |   `-- application.ini
+|   |-- controllers
+|   |   |-- AdminController.php
+|   |   |-- AuthController.php
+|   |   |-- ErrorController.php
+|   |   |-- IndexController.php
+|   |   `-- ProfessorController.php
+|   |-- forms
+|   |   |-- Atividade.php
+|   |   |-- Cargo.php
+|   |   |-- Login.php
+|   |   |-- Professor.php
+|   |   `-- Requisitos.php   
+|   |-- layouts
+|   |   `-- scripts
+|   |       |-- admin.phtml
+|   |       |-- layout.phtml
+|   |       `-- login.phtml       
+|   |-- models
+|   |   |-- Cargos.php
+|   |   `-- DbTable
+|   |       |-- Atividade.php
+|   |       |-- Cargo.php
+|   |       |-- Professor.php
+|   |       |-- Requisito.php
+|   |       `-- Usuario.php
+|   `-- views
+|       |-- helpers
+|       |   |-- CalculaTempo.php
+|       |   |-- ChecarPromo.php
+|       |   |-- FormatDate.php
+|       |   `-- GetUserInfo.php
+|       `-- scripts
+|           |-- admin
+|           |   |-- aceitar.phtml
+|           |   |-- addatividade.phtml
+|           |   |-- addcargo.phtml
+|           |   |-- addprofessor.phtml
+|           |   |-- atividades.phtml
+|           |   |-- cargos.phtml
+|           |   |-- deleteatividade.phtml
+|           |   |-- deletecargo.phtml
+|           |   |-- deleteprofessor.phtml
+|           |   |-- editatividade.phtml
+|           |   |-- editcargo.phtml
+|           |   |-- editprofessor.phtml
+|           |   |-- index.phtml
+|           |   |-- professores.phtml
+|           |   |-- promover.phtml
+|           |   |-- recusar.phtml
+|           |   `-- requisitos.phtml
+|           |-- auth
+|           |   |-- index.phtml
+|           |   |-- login.phtml
+|           |   `-- logout.phtml
+|           |-- error
+|           |   `-- error.phtml
+|           |-- index
+|           |   `-- index.phtml
+|           `-- professor
+|               |-- atividades.phtml
+|               |-- dados.phtml
+|               |-- editarprof.phtml
+|               |-- index.phtml
+|               `-- requisitos.phtml
+

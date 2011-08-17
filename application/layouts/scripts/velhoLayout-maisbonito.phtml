@@ -1,0 +1,85 @@
+<?php
+$this->headMeta()->appendHttpEquiv('Content-Type', 'text/html;charset=utf-8');
+$this->headTitle()->setSeparator(' - ');
+$this->headTitle('Sistema de Progressão Docente - UNICAP');
+echo $this->doctype();
+?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <?php
+        echo $this->headMeta();
+        echo $this->headTitle();
+        echo $this->headLink()->prependStylesheet($this->baseUrl() . '/css/style.css');
+        ?>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <title>Rickys web templates</title>
+        <meta name="keywords" content="" />
+        <meta name="description" content="" />
+        <link href="style.css" rel="stylesheet" type="text/css" media="screen" />
+    </head>
+    <body>
+        <div id="wrapper">
+            <div id="logo" >
+                <h1>Sistema de Progressão Docente - UNICAP</h1>
+                <p><em> nice company slogan here<a href="http://www.freecsstemplates.org/"></a></em></p>
+            </div>
+            <hr />
+            <!-- end #logo -->
+            <div id="header">
+                <div id="menu">
+                    <ul>
+                        <li class="current_page_item"><a href="<?php echo $this->url(array('controller' => 'professor', 'action' => 'index')); ?>" class="first">Home</a></li>
+                        <li><a href="<?php echo $this->url(array('controller' => 'professor', 'action' => 'requisitos')); ?>">Requisitos</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Support</a></li>
+                        <li></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <!-- end #menu -->
+
+            </div>
+            <!-- end #header -->
+            <!-- end #header-wrapper -->
+            <div id="page">
+                <div id="page-bgtop">
+
+                    <div id="sidebar">
+                        <ul>
+                            <li>
+                                <h2>Latest news</h2>
+                                <p>Thank you for downloading this template. This or any other template  is  free for personal use, but you must leave our link on this page. </p>
+                            </li>
+                            <li>
+                                <h2>Partners</h2>
+                                <ul>
+                                    <li><a href="#">Some link here</a></li>
+                                    <li><a href="#">Some link here</a></li>
+                                    <li><a href="#">Some link here</a></li>
+                                    <li><a href="#">Some link here</a></li>
+                                    <li><a href="#">Some link here</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- end #sidebar -->
+
+                    <div id="content">
+                        <?php echo $this->layout()->content; ?>
+                    </div>
+                    <!-- end #content -->
+
+                    <div style="clear: both;">&nbsp;</div>
+                </div>
+            </div>
+            <!-- end #page -->
+            <div id="footer-bgcontent">
+                <div id="footer">
+                    <p>Copyright  2011 YourSitename.com. All rights reserved. Design by <a href="http://www.rickyswebtemplates.com/">Ricky's Free web templates</a>.</p>
+                </div>
+            </div>
+            <!-- end #footer -->
+        </div>
+        <div style="text-align: center; font-size: 0.75em;">Design downloaded from <a href="http://www.freewebtemplates.com/">free website templates</a>.</div>
+    </body>
+</html>

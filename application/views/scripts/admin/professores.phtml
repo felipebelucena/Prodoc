@@ -1,0 +1,40 @@
+<h1>Listagem dos Professores: </h1><br />
+
+<h4><a href="<?php echo $this->url(array('controller'=>'admin','action'=>'addprofessor')); ?>">Nova professor</a></h4>
+<table>
+    <tr>
+        <th>Nome</th>
+        <th>Matricula</th>
+        <th>Título</th>
+        <th>Cargo Atual</th>
+        <th>Desde</th>
+        <th>Pontuação</th>
+        <th>Operação</th>
+        <th>Promoção</th>
+    </tr>
+    <?php foreach ($this->professores as $professor): ?>
+        <tr>
+            <td><?php echo $this->escape($professor->nome); ?></td>
+            <td><?php echo $this->escape($professor->matricula); ?></td>
+            <td><?php echo $this->escape($professor->titulo); ?></td>
+            <td><?php echo $this->escape($professor->nome_cargo);?></td>
+            <td><?php $data = $this->formatDate($professor->data_cargo);
+                    echo $this->escape($data['date']);?></td>
+            <td><?php echo $this->escape($professor->pontos);?></td>
+            <td><a href="<?php echo $this->url(array('controller' => 'admin', 'action' => 'editprofessor', 'id' => $professor->id)); ?>">
+                    <img src="<?php echo $this->baseUrl() . '/images/editar.png'; ?>"></a>
+                <a href="<?php echo $this->url(array('controller'=>'admin', 'action'=>'deleteprofessor', 'id' => $professor->id));?>">
+                    <img src="<?php echo $this->baseUrl() . '/images/excluir.png';?>"></a>
+            </td>
+            <?php  $tempoCargoAnterior = $this->calculaTempo($professor->data_cargo);
+                $nome_cargo = $this->checarPromo($professor->titulo, $professor->nome_cargo, $professor->pontos, $tempoCargoAnterior);
+                if($nome_cargo != NULL && $professor->pontos > 0): ?>
+                <td><a href="<?php echo $this->url(array('controller'=>'admin', 'action'=>'promover', 'matricula'=> $professor->matricula));?>">Promover</a>
+            </td>
+                <?php else: ?>
+            <td>--</td>
+            <?php endif;?>
+        </tr>
+
+    <?php endforeach; ?>
+</table>

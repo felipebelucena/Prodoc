@@ -1,0 +1,22 @@
+<h1>Relação das Atividades: </h1><br />
+
+<h4><a href="<?php echo $this->url(array('controller'=>'admin','action'=>'addcargo')); ?>">Novo cargo</a></h4>
+<table>
+    <tr>
+        <th>Nome</th>
+        <th>Vagas</th>
+        <th>Operação</th>
+    </tr>
+    <?php foreach ($this->cargos as $cargo): ?>
+        <tr>
+            <td><?php echo $this->escape($cargo->cargo); ?></td>
+            <td><?php echo $this->escape($cargo->vagas);?></td>
+            <td><a href="<?php echo $this->url(array('controller' => 'admin', 'action' => 'editcargo', 'id' => $cargo->id)); ?>">
+                    <img src="<?php echo $this->baseUrl() . '/images/editar.png'; ?>"></a>
+                <a href="<?php echo $this->url(array('controller'=>'admin', 'action'=>'deletecargo', 'id' => $cargo->id));?>">
+                    <img src="<?php echo $this->baseUrl() . '/images/excluir.png';?>"></a>
+            </td>
+        </tr>
+
+    <?php endforeach; ?>
+</table>
