@@ -1,2 +1,9 @@
 <h1>Novo Professor</h1>
 <?php echo $this->form; ?>
+
+<?php
+    if (isset ($this->exc)){
+        echo "<script type='text/javascript'>alert('$this->exc')</script>";
+    }
+
+?>

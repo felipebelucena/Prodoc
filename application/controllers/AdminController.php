@@ -35,22 +35,23 @@ class AdminController extends Zend_Controller_Action
                 $procuraCargos = new Application_Model_Cargos();
                 $cargo = $procuraCargos->achaCargoCorreto($titulo, null, 0, null);
 
-
-                // criando pasta
-                $path = '/var/www/html/Prodoc/public/images/comprovantes/' . $matricula;
-                mkdir($path);
-
-
                 //salvando o professor no banco de dados
                 $professores = new Application_Model_DbTable_Professor();
-                if (!$professores->fetchRow('matricula = ' . $matricula)) {
+                try{
+                
                     $professores->novoProfessor($matricula, $nome, $titulo, $cargo);
+                    // criando pasta
+
+                    $path = '/var/www/html/Prodoc/public/images/comprovantes/' . $matricula;
+                    mkdir($path);
 
                     // criando um usuário para o professor
                     $usuarios = new Application_Model_DbTable_Usuario();
                     $usuarios->novoUsuario($matricula, $senha, 'professor');
 
                     $this->_helper->redirector('professores');
+                }catch (Application_Model_MatriculaDuplicadaException $exc){
+                    $this->view->exc = $exc->getMessage();
                 }
             } else {
                 $form->populate($formData);

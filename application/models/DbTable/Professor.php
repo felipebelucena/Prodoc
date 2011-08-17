@@ -37,6 +37,8 @@ class Application_Model_DbTable_Professor extends Zend_Db_Table_Abstract
 
     public function novoProfessor($matricula, $nome, $titulo, $nome_cargo)
     {
+        if($this->fetchRow("matricula = '$matricula'"))
+                throw new Application_Model_MatriculaDuplicadaException ('Matricula já existente');
         $today = date('Y-m-d H:i:s');
         $data = array(
             'matricula' => $matricula,
